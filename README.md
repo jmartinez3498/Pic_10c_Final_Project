@@ -28,3 +28,20 @@ be a lot of buttons/squares to play the game whcih might make this complicated.
 I also need a start/stop button, and I need to figure out how often the bottons/squares will
 be updating and if I can change that. Based on a suggestion from lecture, I might just have a 
 button update the connections each time the button is pressed.
+
+# 6/13/2020 update
+I am trying to create my own button because I don't like what the default look like.
+Read these tutorial/guides
+https://doc.qt.io/qtcreator/quick-buttons.html
+https://doc.qt.io/qt-5/stylesheet-examples.html
+https://forum.qt.io/topic/110425/how-to-use-dynamically-created-buttons
+https://doc.qt.io/qt-5/qtquick-effects-sprites.html
+https://stackoverflow.com/questions/38761344/creating-buttons-on-button-click-in-qt
+https://www.youtube.com/watch?v=GkzncJ71mm0
+https://doc.qt.io/qtcreator/creator-project-creating.html
+https://doc.qt.io/qtcreator/quick-signals.html
+https://doc.qt.io/qt-5/qabstractbutton.html
+
+I managed to create a square in the size that I wanted in a qml file, but I am not sure how to 
+integreate it into my .ui file. From my understanding they are differnt applications and won't
+be able to integrate
