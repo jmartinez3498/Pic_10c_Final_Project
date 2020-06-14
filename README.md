@@ -44,4 +44,30 @@ https://doc.qt.io/qt-5/qabstractbutton.html
 
 I managed to create a square in the size that I wanted in a qml file, but I am not sure how to 
 integreate it into my .ui file. From my understanding they are differnt applications and won't
-be able to integrate
+be able to integrate.
+I decided to just use a for loop to create a grid of push boxes. Now I have to figure out how to
+connect all of them to behave based on the game of life rules.
+Well I managed to create a grid of pushbuttons.
+Okay so now I created them using a qlist of pushbox pointers which means I don't have to name
+each pushbox to give it properties.
+
+Read this tutorial on connections. And read through the ui.h file as I created what I wanted 
+in the form file to check the code I needed.
+https://doc.qt.io/qt-5/signalsandslots.html
+Okay I figured out how to connect two buttons depending if one was pressed or not. I need to 
+figure out how to delay the connection so you can click as many buttons as you want without
+updating the button it is connected to. At least until you voluntarily are ready with your
+setup.
+
+Reading ways to delay the connection signal
+https://www.qtcentre.org/threads/21999-How-to-delay-a-Signal
+https://doc.qt.io/archives/qt-4.8/eventsandfilters.html
+https://doc.qt.io/qt-5/qsignalmapper.html
+https://doc.qt.io/archives/qq/qq10-signalmapper.html
+https://forum.qt.io/topic/58645/solved-how-to-wait-in-a-proper-way-for-multiple-signals/8
+https://forum.qt.io/topic/15743/solved-multiple-signals-and-single-slot/5
+
+From my reading I've decided to create an event called start. It would allow you to push as many 
+buttons as you want to create your grid setup while not allowing for other buttons to be 
+updated. Then when you are ready, you would press the start button and then the buttons in the 
+grid would update normally to create the game of life simulation.

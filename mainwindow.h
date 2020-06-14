@@ -14,11 +14,14 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void update_boxes();
+    void update_boxes(bool);
+    bool button_pressed(bool);
 
 private:
     Ui::MainWindow *ui;
     double x;
     double y;
+    bool start;
+    bool stop;
 };
 #endif // MAINWINDOW_H
