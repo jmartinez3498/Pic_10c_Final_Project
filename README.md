@@ -71,3 +71,37 @@ From my reading I've decided to create an event called start. It would allow you
 buttons as you want to create your grid setup while not allowing for other buttons to be 
 updated. Then when you are ready, you would press the start button and then the buttons in the 
 grid would update normally to create the game of life simulation.
+
+# 6/14/2020
+Okay so I am implementing the event system
+Read these guides:
+https://stackoverflow.com/questions/35826770/qt-no-such-slot-although-there-is
+https://stackoverflow.com/questions/48363918/qobjectconnect-no-such-slot-on-qt
+https://stackoverflow.com/questions/31074126/qobjectconnect-no-such-slot
+https://stackoverflow.com/questions/15570415/what-is-the-difference-between-qcheckboxtoggled-and-qcheckboxclicked
+https://stackoverflow.com/questions/42658994/check-when-a-button-is-clicked-event-qt
+https://stackoverflow.com/questions/44950557/in-qt-how-can-i-delay-a-member-functions-return-until-a-signal-is-received
+I kept running into an issue where my signal was being recieved. I found out that the signals
+have to be of the same signurature type.
+Well I sort of created a start button. I just creates the connections between buttons once the
+start button is pressed.
+Well I ran into a problem using buttons and signals. If I connect two buttons such that if one 
+is pressed, and turns on the other, which then turns off the other, the application crashes.
+I have no idea how to fix it based on what I have been reading. You can see it for yourself,
+I made two pushbuttons with these connections in the bottom right. Clicking one of them crashes
+the program. I was kind of hopping it wouldn't crash, but oh well.
+I did get my start button to work. You can test it out. The top-left most button is connected to
+the button directly right of it. However, it only sends the signal once the start button is 
+pressed.
+
+I also managed to find qt application code for the game(which I did not use!) because I am 
+curious to how they managed to implement it. They don't actually use pushbuttons like I did.
+They seem to use some sort of matrix, but to be honest I'm not really sure how it works. I 
+don't understand how creating a matrix and using the paint functions will create a graphic.
+I also dont understand how they update each iteration. 
+https://doc.qt.io/archives/3.3/life-example.html
+
+At this point, I don't really see anything else I can add. If I were to continue my project from
+this point, I would probably restart and look for a new way to implment a grid of boxes.
+
+

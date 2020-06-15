@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtWidgets>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,14 +16,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void update_boxes(bool);
-    bool button_pressed(bool);
+    void create_connections();
+    void button_pressed();
+
 
 private:
     Ui::MainWindow *ui;
-    double x;
-    double y;
-    bool start;
-    bool stop;
+    QVector<QPushButton*> Buttons;
+
 };
 #endif // MAINWINDOW_H

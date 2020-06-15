@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>400</height>
+    <height>513</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,27 +17,24 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>170</y>
+      <x>0</x>
+      <y>430</y>
       <width>93</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Start</string>
     </property>
     <property name="checkable">
-     <bool>true</bool>
-    </property>
-    <property name="checked">
      <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>100</y>
+      <x>150</x>
+      <y>430</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -52,14 +49,17 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>230</y>
+      <x>290</x>
+      <y>430</y>
       <width>93</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
      <string>PushButton</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -78,18 +78,34 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>pushButton_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_3</receiver>
+   <slot>toggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>465</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>309</x>
+     <y>476</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
    <signal>toggled(bool)</signal>
    <receiver>pushButton_2</receiver>
    <slot>toggle()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>135</x>
-     <y>197</y>
+     <x>377</x>
+     <y>461</y>
     </hint>
     <hint type="destinationlabel">
-     <x>260</x>
-     <y>138</y>
+     <x>222</x>
+     <y>461</y>
     </hint>
    </hints>
   </connection>

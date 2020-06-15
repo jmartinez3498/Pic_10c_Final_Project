@@ -9,15 +9,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->x=250;
-    this->y=250;
-
 
     int j = 0;
     int k = 0;
-    QVector<QPushButton*> Buttons;
-
-
+    //this for loop populates the interface with 100 buttons
     for (int i = 1; i <= 100;++i)
     {
         Buttons.push_back(new QPushButton("",this));
@@ -29,14 +24,12 @@ MainWindow::MainWindow(QWidget *parent)
         if (i%10==0)
         k=0;
     }
-
-    QObject::connect(Buttons[0], SIGNAL(toggled(bool)),
-            Buttons[1], SLOT(toggle()));
-
-    //QObject::connect(Buttons[0], SIGNAL(toggled(bool)),
-            //Buttons[1], SLOT(update_boxes()));
-
-
+    //QObject::connect(ui->pushButton, SIGNAL(clicked()),
+                     //this, SLOT(this->button_pressed()));
+    //Looked up this code below based on the code above.
+    //Not really sure what "[this]{ button_pressed(); }" means though
+    QObject::connect(ui->pushButton, &QPushButton::clicked,
+                     this, [this]{ button_pressed(); });
 
 }
 
@@ -44,15 +37,17 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-void MainWindow::update_boxes(bool z)
+//This creates the connections once the start button is pressed.
+void MainWindow::create_connections()
 {
-    start = z;
+    QObject::connect(Buttons[0], SIGNAL(clicked()),
+            Buttons[1], SLOT(toggle()));
 
 }
-
-bool MainWindow::button_pressed(bool z)
+//This only activates when the button is pressed
+void MainWindow::button_pressed()
 {
-    stop=z;
-    return false;
+    create_connections();
 }
+
+
